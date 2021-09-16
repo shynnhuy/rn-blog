@@ -6,7 +6,7 @@ export const EditScreen = ({ route: { params }, navigation: { pop } }) => {
   const { state, editBlogPost } = useBlogPosts();
   const { id } = params;
 
-  const post = state.find((item) => item.id === id);
+  const post = state.posts.find((item) => item.id === id);
 
   const editPost = (title, content) => {
     if (!title || !content) return;

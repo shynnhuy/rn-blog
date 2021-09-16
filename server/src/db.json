@@ -1,3 +1,14 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "title": "hello",
+      "content": "hello",
+      "id": 1
+    },
+    {
+      "title": "hi",
+      "content": "hi there",
+      "id": 2
+    }
+  ]
 }

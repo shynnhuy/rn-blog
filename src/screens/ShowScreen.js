@@ -4,12 +4,12 @@ import { Feather } from "@expo/vector-icons";
 import { useBlogPosts } from "../context/BlogContext";
 
 export const ShowScreen = ({ route: { params }, navigation }) => {
+  const { id } = params;
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Edit", { id: params["id"] })}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate("Edit", { id })}>
           <Feather name="edit" size={25} />
         </TouchableOpacity>
       ),
@@ -18,7 +18,7 @@ export const ShowScreen = ({ route: { params }, navigation }) => {
 
   const { state } = useBlogPosts();
 
-  const post = state.find((item) => item.id === params["id"]);
+  const post = state.posts.find((item) => item.id === id);
 
   return (
     <View style={styles.container}>

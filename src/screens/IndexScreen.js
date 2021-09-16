@@ -30,7 +30,7 @@ export const IndexScreen = ({ navigation }) => {
       style={styles.row}
     >
       <Text style={styles.title}>
-        {item.title} - {item.id}
+        #{item.id} - {item.title}
       </Text>
       <TouchableOpacity onPress={() => removeBlogPost(item.id)}>
         <Feather style={styles.icon} name="trash" />
@@ -69,7 +69,7 @@ export const IndexScreen = ({ navigation }) => {
     >
       <FlatList
         data={state.posts}
-        keyExtractor={(posts) => posts.id}
+        keyExtractor={(posts) => `${posts.id}`}
         renderItem={renderPost}
         ListEmptyComponent={<ListEmpty />}
       />
